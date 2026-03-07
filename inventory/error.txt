@@ -1,0 +1,56 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.example:inventory >------------------------
+[INFO] Building inventory 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ inventory ---
+[INFO] Deleting C:\Users\indhu\Downloads\Inventory System\inventory\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ inventory ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 8 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ inventory ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 18 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/indhu/Downloads/Inventory System/inventory/src/main/java/com/example/inventory/controller/DashboardController.java:[19,14] cannot find symbol
+  symbol:   method append(java.lang.String,long)
+  location: variable model of type org.springframework.ui.Model
+[ERROR] /C:/Users/indhu/Downloads/Inventory System/inventory/src/main/java/com/example/inventory/security/SecurityConfig.java:[55,46] constructor DaoAuthenticationProvider in class org.springframework.security.authentication.dao.DaoAuthenticationProvider cannot be applied to given types;
+  required: org.springframework.security.core.userdetails.UserDetailsService
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/indhu/Downloads/Inventory System/inventory/src/main/java/com/example/inventory/security/SecurityConfig.java:[56,17] cannot find symbol
+  symbol:   method setUserDetailsService(com.example.inventory.security.CustomUserDetailsService)
+  location: variable provider of type org.springframework.security.authentication.dao.DaoAuthenticationProvider
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.759 s
+[INFO] Finished at: 2026-03-07T15:42:40+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project inventory: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/indhu/Downloads/Inventory System/inventory/src/main/java/com/example/inventory/controller/DashboardController.java:[19,14] cannot find symbol
+[ERROR]   symbol:   method append(java.lang.String,long)
+[ERROR]   location: variable model of type org.springframework.ui.Model
+[ERROR] /C:/Users/indhu/Downloads/Inventory System/inventory/src/main/java/com/example/inventory/security/SecurityConfig.java:[55,46] constructor DaoAuthenticationProvider in class org.springframework.security.authentication.dao.DaoAuthenticationProvider cannot be applied to given types;
+[ERROR]   required: org.springframework.security.core.userdetails.UserDetailsService
+[ERROR]   found:    no arguments
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/indhu/Downloads/Inventory System/inventory/src/main/java/com/example/inventory/security/SecurityConfig.java:[56,17] cannot find symbol
+[ERROR]   symbol:   method setUserDetailsService(com.example.inventory.security.CustomUserDetailsService)
+[ERROR]   location: variable provider of type org.springframework.security.authentication.dao.DaoAuthenticationProvider
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

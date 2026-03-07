@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Denied - Inventory System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container" style="text-align: center; margin-top: 100px;">
+    <h1 style="color: var(--danger-color); font-size: 3rem;">403</h1>
+    <h2>Access Denied</h2>
+    <p style="margin: 20px 0;">You do not have permission to access this page.</p>
+    <a th:href="@{/dashboard}" class="btn btn-primary">Back to Dashboard</a>
+</div>
+
+</body>
+</html>

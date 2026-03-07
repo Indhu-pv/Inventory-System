@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Logs - Inventory System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Inventory System</h2>
+    <div>
+        <a th:href="@{/dashboard}">Back to Dashboard</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header-flex">
+        <h2>📜 Stock Update History</h2>
+        <a th:href="@{/reports/logs/csv}" class="btn btn-primary">📥 Export Logs</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Log ID</th>
+                <th>Timestamp</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Action Type</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="log : ${logs}">
+                <td th:text="${log.id}">1</td>
+                <td th:text="${#temporals.format(log.timestamp, 'yyyy-MM-dd HH:mm:ss')}">2026-03-01 10:00:00</td>
+                <td th:text="${log.product != null ? log.product.id : 'N/A'}">101</td>
+                <td th:text="${log.productName}">Phone</td>
+                <td>
+                    <span th:if="${log.type == 'ADD'}" style="color: var(--success-color); font-weight: bold;">ADD</span>
+                    <span th:if="${log.type == 'REDUCE'}" style="color: var(--warning-color); font-weight: bold;">REDUCE</span>
+                    <span th:if="${log.type == 'DELETE'}" style="color: var(--danger-color); font-weight: bold;">DELETE</span>
+                </td>
+                <td th:text="${log.type == 'ADD' ? '+' + log.quantityChanged : '-' + log.quantityChanged}">+1</td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(logs)}">
+                <td colspan="6" style="text-align: center;">No stock logs found</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

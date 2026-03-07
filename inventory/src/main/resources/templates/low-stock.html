@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Low Stock - Inventory System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Inventory System</h2>
+    <div>
+        <a th:href="@{/dashboard}">Back to Dashboard</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header-flex">
+        <h2 style="color: var(--danger-color);">⚠️ Low Stock Alerts</h2>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Threshold</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">1</td>
+                <td th:text="${product.name}">Phone</td>
+                <td th:text="${product.category}">Electronics</td>
+                <td th:text="${product.quantity}" style="color: red; font-weight: bold;">0</td>
+                <td>< 100</td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(products)}">
+                <td colspan="5" style="text-align: center;">All products are well stocked!</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
